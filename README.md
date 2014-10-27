@@ -52,6 +52,10 @@ return (new BaseImage())
         "/var/www/myproject/config/application.config.php"
     ))
 
+    // this is subject of a future change, directories containing
+    // the composer.json will be detected automatically
+    ->installComposerDependenciesIn('/var/www/myproject')
+
     ->addAsset('vhost.conf', '/etc/apache2/sites-available/default')
     ->run('chown -R www-data:www-data /var/www')
     ;
