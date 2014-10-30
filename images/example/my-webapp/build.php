@@ -15,6 +15,11 @@ return (new BaseImage())
             'composer.json'      => '/var/www/myproject/composer.json',
         )
     )
+
+    // this is subject of a future change, directories containing
+    // the composer.json will be detected automatically
+    ->installComposerDependenciesIn('/var/www/myproject')
+
     // fix the application configuration to make a module unavailable
     ->run(array(
         "sed",
